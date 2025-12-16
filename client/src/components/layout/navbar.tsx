@@ -42,8 +42,8 @@ export function Navbar() {
             Features
           </a>
           <div className="flex items-center gap-3">
-             <Button variant="ghost" className="rounded-full font-semibold text-secondary hover:text-primary">
-              Login
+             <Button variant="ghost" className="rounded-full font-semibold text-secondary hover:text-primary" asChild>
+              <a href="https://stylere.app/auth">Login</a>
             </Button>
             <Button variant="default" className="rounded-full px-6 font-bold text-white shadow-lg hover:shadow-xl transition-all">
               Sign Up
