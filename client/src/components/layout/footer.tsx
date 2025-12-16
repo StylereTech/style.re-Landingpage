@@ -23,7 +23,7 @@ export function Footer() {
             <h4 className="font-bold mb-6 text-secondary">Company</h4>
             <ul className="space-y-4">
               <li><a href="https://stylere.app/about-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              <li><a href="https://stylere.app/help-center" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
               <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
             </ul>
           </div>
