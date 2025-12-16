@@ -9,7 +9,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Monochrome Palette */
+  /* Brand Palette */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   
@@ -43,34 +43,39 @@
 }
 
 :root {
-  /* Dark Tech Theme by Default */
-  --background: 240 10% 4%; /* Almost black */
-  --foreground: 0 0% 98%; /* White */
+  /* Style.re Brand Theme - Light & Energetic */
+  
+  /* Brand Orange: #FF6B00 -> 25 100% 50% */
+  /* Brand Navy: #0F172A -> 222 47% 11% */
+  /* Background: #FFFBF5 (Warm White) -> 36 33% 98% */
 
-  --card: 240 10% 6%;
-  --card-foreground: 0 0% 98%;
+  --background: 0 0% 100%; /* Pure White */
+  --foreground: 222 47% 11%; /* Navy Black */
 
-  --popover: 240 10% 4%;
-  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 98%; /* Light Grey/White */
+  --card-foreground: 222 47% 11%;
 
-  --primary: 0 0% 98%; /* White primary actions */
-  --primary-foreground: 240 5.9% 10%; /* Black text on white */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
-  --secondary: 240 4% 16%; /* Dark Grey */
+  --primary: 25 100% 50%; /* Brand Orange */
+  --primary-foreground: 0 0% 100%; /* White text on Orange */
+
+  --secondary: 222 47% 11%; /* Brand Navy */
   --secondary-foreground: 0 0% 98%;
 
-  --muted: 240 4% 16%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
 
-  --accent: 210 100% 50%; /* Electric Blue Accent - sparingly used */
-  --accent-foreground: 0 0% 98%;
+  --accent: 25 100% 90%; /* Light Orange */
+  --accent-foreground: 25 100% 30%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
 
-  --border: 240 4% 16%;
-  --input: 240 4% 16%;
-  --ring: 240 4.9% 83.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 25 100% 50%;
   
   --radius: 0.5rem;
 }

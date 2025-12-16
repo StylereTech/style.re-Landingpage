@@ -1,81 +1,53 @@
-import mapImg from "@assets/generated_images/abstract_digital_delivery_map.png";
-import packageImg from "@assets/generated_images/premium_packaging_detail.png";
-import lifestyleImg from "@assets/generated_images/stylish_delivery_reception_lifestyle.png";
-import { Button } from "@/components/ui/button";
+import { Smartphone, CreditCard, PackageCheck } from "lucide-react";
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-black text-white overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-gray-50">
       <div className="container px-6 mx-auto">
-        
-        {/* Step 1 */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          <div className="lg:w-1/2 order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-              <img src={mapImg} alt="Smart Routing" className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-            </div>
-          </div>
-          <div className="lg:w-1/2 order-1 lg:order-2">
-            <div className="flex items-center mb-6">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-sm font-mono mr-4">01</span>
-              <h3 className="text-3xl font-display font-bold">Smart Scheduling</h3>
-            </div>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Book a pickup instantly through our intuitive platform. Our AI assigns the optimal driver based on real-time traffic data and route density.
-            </p>
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Instant booking confirmation</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Real-time ETA updates</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Flexible pickup windows</li>
-            </ul>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-6">
+            How Style.re Gets Your Order From Store to Door
+          </h2>
         </div>
 
-        {/* Step 2 */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          <div className="lg:w-1/2 order-1">
-            <div className="flex items-center mb-6">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-sm font-mono mr-4">02</span>
-              <h3 className="text-3xl font-display font-bold">Premium Handling</h3>
-            </div>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Your garments are delicate. We treat them that way. From hanger-ready transport to temperature-controlled vehicles, we ensure pristine condition.
-            </p>
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Garment-on-hanger capability</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Tamper-evident security</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>White-glove service standard</li>
-            </ul>
-          </div>
-          <div className="lg:w-1/2 order-2">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-              <img src={packageImg} alt="Premium Packaging" className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-            </div>
-          </div>
-        </div>
+        <div className="grid md:grid-cols-3 gap-12 relative">
+          {/* Connecting Line (Desktop) */}
+          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-200 -z-0 border-t-2 border-dashed border-gray-300"></div>
 
-        {/* Step 3 */}
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-           <div className="lg:w-1/2 order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-              <img src={lifestyleImg} alt="Customer Satisfaction" className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          {/* Step 1 */}
+          <div className="relative z-10 text-center group">
+            <div className="w-24 h-24 bg-white rounded-full shadow-lg mx-auto mb-6 flex items-center justify-center border-4 border-white group-hover:border-primary transition-colors duration-300">
+              <Smartphone className="w-10 h-10 text-secondary group-hover:text-primary transition-colors" />
             </div>
-          </div>
-          <div className="lg:w-1/2 order-1 lg:order-2">
-            <div className="flex items-center mb-6">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-sm font-mono mr-4">03</span>
-              <h3 className="text-3xl font-display font-bold">Delighted Customers</h3>
-            </div>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              The delivery is the only physical touchpoint for e-commerce brands. We make it count with professional drivers and seamless communication.
+            <h3 className="text-xl font-bold text-secondary mb-3">Schedule your Order Pickup</h3>
+            <p className="text-muted-foreground leading-relaxed px-4">
+              Request a Delivery & Select a convenient time for your order to be picked up from the store.
             </p>
-            <Button variant="outline" className="rounded-full">See Success Stories</Button>
           </div>
-        </div>
 
+          {/* Step 2 */}
+          <div className="relative z-10 text-center group">
+             <div className="w-24 h-24 bg-white rounded-full shadow-lg mx-auto mb-6 flex items-center justify-center border-4 border-white group-hover:border-primary transition-colors duration-300">
+              <CreditCard className="w-10 h-10 text-secondary group-hover:text-primary transition-colors" />
+            </div>
+            <h3 className="text-xl font-bold text-secondary mb-3">Pay for your Delivery</h3>
+            <p className="text-muted-foreground leading-relaxed px-4">
+              Securely pay for the delivery service to get your fashion items swiftly to your doorstep.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative z-10 text-center group">
+             <div className="w-24 h-24 bg-white rounded-full shadow-lg mx-auto mb-6 flex items-center justify-center border-4 border-white group-hover:border-primary transition-colors duration-300">
+              <PackageCheck className="w-10 h-10 text-secondary group-hover:text-primary transition-colors" />
+            </div>
+            <h3 className="text-xl font-bold text-secondary mb-3">Receive your Package</h3>
+            <p className="text-muted-foreground leading-relaxed px-4">
+              Sit back and relax as your package is delivered right to you, hassle-free.
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
   );

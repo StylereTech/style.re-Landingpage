@@ -1,47 +1,65 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroBg from "@assets/generated_images/futuristic_fashion_delivery_hero_background.png";
+import heroImg from "@assets/generated_images/store_to_door_delivery_concept.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Futuristic Fashion Delivery"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-white to-orange-50/30 pt-20">
+      <div className="container px-6 mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          {/* Content */}
+          <div className="lg:w-1/2 text-left">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-secondary tracking-tight mb-6 leading-[1.1]">
+              DELIVERY <br />
+              <span className="text-primary italic">REDEFINED</span>
+            </h1>
+            
+            <h2 className="text-xl md:text-2xl font-medium text-secondary/80 mb-6">
+              Experience the Future of Logistics
+            </h2>
 
-      {/* Content */}
-      <div className="container relative z-10 px-6 mx-auto text-center max-w-4xl">
-        <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white backdrop-blur-xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <span className="flex h-2 w-2 rounded-full bg-accent mr-2 animate-pulse"></span>
-          The New Standard in Logistics
-        </div>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
+              Style.re brings your favorite stores to you with fast, reliable delivery. 
+              We've got you covered – Track every step — from checkout to doorstep. 
+              Fast, secure & stress-free delivery – <span className="font-bold text-primary">from store to door.</span>
+            </p>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">
-          Fashion Moved at <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
-            The Speed of Style.
-          </span>
-        </h1>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-6 py-4 rounded-full border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              />
+              <Button size="lg" className="rounded-full px-8 h-14 text-base font-bold shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all">
+                Create an Account
+              </Button>
+            </div>
+          </div>
 
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-          Experience the future of fashion logistics. Fast, reliable, and tech-driven delivery designed exclusively for premium brands and discerning customers.
-        </p>
+          {/* Image */}
+          <div className="lg:w-1/2 relative">
+             <div className="absolute -inset-4 bg-primary/5 rounded-full blur-3xl" />
+             <img 
+               src={heroImg} 
+               alt="Store to Door Delivery" 
+               className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3] hover:scale-[1.02] transition-transform duration-700"
+             />
+             
+             {/* Floating Badge */}
+             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block animate-in fade-in slide-in-from-bottom-8 delay-500">
+               <div className="flex items-center gap-4">
+                 <div className="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">
+                   ✓
+                 </div>
+                 <div>
+                   <p className="font-bold text-secondary">Order Delivered</p>
+                   <p className="text-sm text-gray-500">Just now • 12:42 PM</p>
+                 </div>
+               </div>
+             </div>
+          </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
-          <Button size="lg" className="rounded-full px-8 h-12 text-base w-full sm:w-auto bg-white text-black hover:bg-gray-200">
-            Schedule Pickup
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base w-full sm:w-auto border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent backdrop-blur-sm">
-            Learn More
-          </Button>
         </div>
       </div>
     </section>
