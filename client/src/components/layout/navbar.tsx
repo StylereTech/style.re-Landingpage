@@ -45,8 +45,8 @@ export function Navbar() {
              <Button variant="ghost" className="rounded-full font-semibold text-secondary hover:text-primary" asChild>
               <a href="https://stylere.app/auth">Login</a>
             </Button>
-            <Button variant="default" className="rounded-full px-6 font-bold text-white shadow-lg hover:shadow-xl transition-all">
-              Sign Up
+            <Button variant="default" className="rounded-full px-6 font-bold text-white shadow-lg hover:shadow-xl transition-all" asChild>
+              <a href="https://stylere.app/auth?mode=login">Sign Up</a>
             </Button>
           </div>
         </div>
@@ -73,11 +73,11 @@ export function Navbar() {
             Features
           </a>
           <div className="flex flex-col gap-3 pt-4 border-t">
-            <Button variant="outline" className="w-full rounded-full" onClick={() => setIsOpen(false)}>
-              Login
+            <Button variant="outline" className="w-full rounded-full" asChild>
+              <a href="https://stylere.app/auth">Login</a>
             </Button>
-            <Button className="w-full rounded-full font-bold" onClick={() => setIsOpen(false)}>
-              Sign Up
+            <Button className="w-full rounded-full font-bold" asChild>
+              <a href="https://stylere.app/auth?mode=login">Sign Up</a>
             </Button>
           </div>
         </div>

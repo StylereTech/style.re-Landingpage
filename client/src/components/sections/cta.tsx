@@ -28,8 +28,8 @@ export function CTASection() {
              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                Style.Re's Order Pickup is the ultimate solution for your last-minute fashion emergencies. Whether you're rushing between meetings or need a quick style refresh, we bring together convenience and fashion in one seamless service.
              </p>
-             <Button size="lg" className="rounded-full px-12 h-14 text-lg font-bold shadow-lg hover:shadow-primary/25 w-full md:w-auto">
-               Sign-up
+             <Button size="lg" className="rounded-full px-12 h-14 text-lg font-bold shadow-lg hover:shadow-primary/25 w-full md:w-auto" asChild>
+               <a href="https://stylere.app/auth?mode=login">Sign-up</a>
              </Button>
           </div>
 
