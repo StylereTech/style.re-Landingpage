@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@assets/generated_images/store_to_door_delivery_concept.png";
+import heroImg from "@assets/generated_images/bopis_last_mile_pickup.png";
 
 export function Hero() {
   return (
