@@ -32,8 +32,25 @@ const slides = [
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleCreateAccount = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!isValidEmail || submitting) return;
+    setSubmitting(true);
+    try {
+      await fetch('https://api.stylere.app/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'landing-page' }),
+      });
+    } catch (_) {
+      // Don't block redirect if lead capture fails
+    }
+    window.location.href = `https://stylere.app/auth?mode=register&email=${encodeURIComponent(email)}`;
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -77,15 +94,11 @@ export function Hero() {
               />
               <Button 
                 size="lg" 
-                className={`rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all ${isValidEmail ? 'hover:shadow-primary/25 hover:-translate-y-0.5' : 'opacity-50 cursor-not-allowed'}`}
-                disabled={!isValidEmail}
-                asChild={isValidEmail}
+                className={`rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all ${isValidEmail && !submitting ? 'hover:shadow-primary/25 hover:-translate-y-0.5 cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
+                disabled={!isValidEmail || submitting}
+                onClick={handleCreateAccount}
               >
-                {isValidEmail ? (
-                  <a href={`https://stylere.app/auth?mode=register&email=${encodeURIComponent(email)}`}>Create an Account</a>
-                ) : (
-                  <span>Create an Account</span>
-                )}
+                {submitting ? 'Redirecting...' : 'Create an Account'}
               </Button>
             </div>
           </div>
