@@ -31,6 +31,9 @@ const slides = [
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [email, setEmail] = useState("");
+  
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -67,11 +70,22 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 max-w-md">
               <input 
                 type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email" 
                 className="flex-1 px-6 py-4 rounded-full border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
               />
-              <Button size="lg" className="rounded-full px-8 h-14 text-base font-bold shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all" asChild>
-                <a href="https://stylere.app/auth?mode=login">Create an Account</a>
+              <Button 
+                size="lg" 
+                className={`rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all ${isValidEmail ? 'hover:shadow-primary/25 hover:-translate-y-0.5' : 'opacity-50 cursor-not-allowed'}`}
+                disabled={!isValidEmail}
+                asChild={isValidEmail}
+              >
+                {isValidEmail ? (
+                  <a href={`https://stylere.app/auth?mode=register&email=${encodeURIComponent(email)}`}>Create an Account</a>
+                ) : (
+                  <span>Create an Account</span>
+                )}
               </Button>
             </div>
           </div>
